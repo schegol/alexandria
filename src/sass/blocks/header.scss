@@ -1,0 +1,605 @@
+.header {
+  @include dflex(nowrap, column, flex-start, stretch);
+  position: relative;
+  z-index: 1;
+}
+
+.header__top-row {
+  background-color: #fff;
+}
+
+.header__bottom-row {
+  background-color: #fff;
+}
+
+.header__top-container {
+  @include dflex(nowrap, row, flex-start, center);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #F4F4FF;
+}
+
+.header__visible-part {
+  box-shadow: 0 10px 80px rgba(#00003E, .05);
+}
+
+.header__bottom-container {
+  @include dflex(nowrap, row, flex-start, center);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.header__submenu-container {
+  @include dflex(nowrap, row, flex-start, flex-start);
+}
+
+.header__small-menu {
+  @include list-reset;
+  @include dflex(nowrap, row, flex-start, center);
+  margin-right: 85px;
+}
+
+.header__small-menu-item {
+  &:not(:last-child) {
+    margin-right: 43px;
+  }
+}
+
+.header__small-menu-link {
+  @include transition(color);
+  color: $text-color;
+  font-size: 14px;
+  line-height: 100%;
+
+  &:hover,
+  &:focus {
+    color: $text-hovered;
+  }
+}
+
+.header__address {
+  margin-right: 30px;
+  padding: 5px 0 5px 35px;
+  // padding-left: 35px;
+  font-size: 14px;
+  line-height: 100%;
+  background-image: url("../img/icon-header-pin.svg");
+  background-repeat: no-repeat;
+  background-size: 13px 16px;
+  background-position: left 4px center;
+}
+
+.header__phone {
+  margin-right: 30px;
+  padding: 5px 0 5px 35px;
+  // padding-left: 35px;
+  font-size: 14px;
+  line-height: 100%;
+  background-image: url("../img/icon-header-phone.svg");
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+  background-position: left 2px center;
+}
+
+.header__phone-link {
+  @include transition(color);
+  color: $text-color;
+
+  &:hover,
+  &:focus {
+    color: $text-hovered;
+  }
+}
+
+.header__social-list {
+  @include list-reset;
+  @include dflex(nowrap, row, flex-start, center);
+  margin-left: auto;
+}
+
+.header__social-item {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.header__social-link {
+  @include dflex(nowrap, row, center, center);
+  @include transition(background-color);
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid $main-color;
+  outline: none;
+
+  & path {
+    @include transition(fill);
+    fill: $main-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $main-color;
+
+    & path {
+      fill: #fff;
+    }
+  }
+}
+
+.header__logo {
+  &--big {
+    display: block;
+  }
+
+  &--small {
+    display: none;
+  }
+}
+
+.header__menu {
+  @include list-reset;
+  @include dflex(nowrap, row, flex-start, center);
+  margin-left: auto;
+}
+
+.header__menu-item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.header__menu-link {
+  @include transition(color);
+  position: relative;
+  padding-right: 28px;
+  color: $text-color;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  &::after {
+    @include abs-pseudo;
+    top: 50%;
+    right: 0;
+    width: 8px;
+    height: 5px;
+    background-image: url("../img/icon-arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-50%);
+  }
+
+  &:hover,
+  &:focus {
+    color: $text-hovered;
+  }
+}
+
+.header__appointment-btn {
+  min-width: 130px;
+  margin-left: 30px;
+}
+
+.header__menu-toggle {
+  display: none;
+  outline: none;
+}
+
+.header__submenu-block {
+  position: absolute;
+  left: 0;
+  display: none;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #fff;
+
+  &--open {
+    display: block;
+    box-shadow: 0 10px 80px rgba(#00003E,.05);
+    z-index: -1;
+  }
+}
+
+.header__submenu {
+  display: none;
+
+  &--open {
+    display: block;
+  }
+}
+
+.header__submenu-heading {
+  @include reset;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+.header__submenu-list {
+  @include list-reset;
+  @include dflex(wrap, column, flex-start, flex-start);
+  // min-height: 100px;
+  height: auto;
+  max-height: 300px;
+}
+
+.header__submenu.has-parents .header__submenu-list {
+  height: 260px;
+}
+
+.header__submenu-item {
+  width: auto;
+  min-width: 240px;
+
+  &--parent {
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    // margin-right: 55px;
+  }
+}
+
+.header__submenu-link {
+  @include transition(color);
+  position: relative;
+  padding-left: 35px;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 500;
+
+  &:hover,
+  &:focus {
+    color: $text-hovered;
+  }
+
+  &::before {
+    @include abs-pseudo;
+    top: 50%;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background-color: $accent-color;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.header__subsubmenu-toggle {
+  display: none;
+}
+
+.header__subsubmenu-list {
+  @include list-reset;
+}
+
+.header__subsubmenu-link {
+  @include transition(color);
+  padding-left: 35px;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 25px;
+
+  &:hover,
+  &:focus {
+    color: $text-hovered;
+  }
+}
+
+.header__submenu-item--parent .header__submenu-link {
+  margin-bottom: 25px;
+}
+
+@media (max-width: $notebook-width) {
+  .header__small-menu {
+    margin-right: 60px;
+  }
+
+  .header__small-menu-item {
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+
+  .header__address {
+    max-width: 160px;
+    line-height: 125%;
+  }
+
+  .header__social-item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  .header__menu-item {
+     &:not(:last-child) {
+       margin-right: 25px;
+     }
+  }
+
+  .header__menu-link {
+    padding-right: 25px;
+    font-size: 13px;
+  }
+
+  .header__appointment-btn {
+    min-width: 40px;
+    max-width: 40px;
+    margin-left: 15px;
+    font-size: 0;
+    background-image: url("../img/icon-calendar-white.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .header__small-menu {
+    display: none;
+  }
+
+  .header__address {
+    max-width: none;
+    margin-right: 20px;
+    padding-left: 25px;
+  }
+
+  .header__phone {
+    margin-right: 20px;
+    padding-left: 25px;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__appointment-btn {
+    margin-right: 20px;
+    margin-left: auto;
+  }
+
+  .header__menu-toggle {
+    @include transition(background-color);
+    display: block;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 40px;
+    background-color: $main-color;
+    background-image: url("../img/icon-burger-menu-handmade.svg");
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: $extra-color;
+    }
+  }
+
+  // .header--index .header__menu-toggle {
+  //   margin-left: auto;
+  // }
+
+  .header__submenu-container {
+    flex-direction: column;
+  }
+
+  .header__submenu {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 35px;
+    }
+  }
+
+  .header__submenu-list {
+    min-height: 0;
+  }
+
+  .header__submenu.has-parents .header__submenu-list {
+    height: 200px;
+  }
+
+  .header__submenu-item {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .header__submenu-block {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .header__submenu-container {
+    align-items: center;
+  }
+
+  .header__submenu {
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+  }
+
+  .header__submenu.has-parents .header__submenu-list {
+    height: auto;
+  }
+
+  .header__submenu-heading {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .header__submenu-item {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,.07);
+
+    &--parent {
+      // margin-bottom: 20px;
+    }
+  }
+
+  .header__submenu-item--parent .header__submenu-link {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .header__submenu-link {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    font-size: 18px;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba(0,0,0,.01);
+    }
+  }
+
+  .header__subsubmenu-toggle {
+    position: absolute;
+    top: 50%;
+    right: calc(50% - 240px);
+    display: block;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+
+    &::before,
+    &::after {
+      @include abs-pseudo;
+      @include transition;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 16px;
+      height: 2px;
+      background-color: darken(#ededed, 5%);;
+      transform: translate(-50%, -50%) rotate(0);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &:hover::before,
+    &:focus::before,
+    &:hover::after,
+    &:focus::after {
+      background-color: #a2a6b7;
+    }
+
+    &--open {
+      &::after {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+    }
+  }
+
+  .header__subsubmenu-item {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,.07);
+  }
+
+  .header__subsubmenu-link {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    font-size: 18px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba(0,0,0,.01);
+    }
+  }
+
+  .header__submenu-list {
+    flex-wrap: nowrap;
+    height: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: $xs-mobile-width) {
+  .header__top-container {
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .header__social-list {
+    display: none;
+  }
+
+  .header__address {
+    max-width: 140px;
+    margin-right: 0;
+    padding-left: 22px;
+  }
+
+  .header__phone {
+    margin-right: 0;
+    padding-left: 22px;
+  }
+
+  .header__bottom-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .header__logo {
+    &--big {
+      display: none;
+    }
+
+    &--small {
+      display: block;
+    }
+  }
+
+  .header__appointment-btn {
+    margin-right: 10px;
+  }
+
+  .header__submenu-heading {
+    font-size: 16px;
+  }
+
+  .header__submenu-link {
+    font-size: 16px;
+  }
+
+  .header__subsubmenu-link {
+    font-size: 16px;
+  }
+
+  .header__subsubmenu-toggle {
+    right: calc(50% - 155px);
+  }
+}
