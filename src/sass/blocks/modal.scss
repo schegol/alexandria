@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  //display: none;
+  display: none;
   width: 100vw;
   height: 100vh;
   background-color: rgba(11, 11, 11, 0.84);
@@ -34,18 +34,6 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-
-  & line {
-    @include transition(stroke);
-    stroke: #000;
-  }
-
-  &:hover,
-  &:focus {
-    & line {
-      stroke: $main-color;
-    }
-  }
 }
 
 .modal__submit {

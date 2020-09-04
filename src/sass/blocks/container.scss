@@ -1,27 +1,17 @@
 .container {
-  width: 1170px;
+  width: 100%;
   margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
-@media (max-width: $notebook-width) {
+@media (min-width: $desktop-width) {
   .container {
-    width: 100%;
-    padding-right: 20px;
-    padding-left: 20px;
+    width: 1170px;
+    padding: 0;
   }
-}
 
-@media (max-width: $tablet-width) {
-  .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-@media (max-width: $mobile-width) {
-  .container {
-    padding-right: 10px;
-    padding-left: 10px;
+  .container--small {
+    width: 1170px;
   }
 }

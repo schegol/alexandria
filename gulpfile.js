@@ -73,7 +73,7 @@ gulp.task("html", function () {
 
 gulp.task("copy", function() {
   return gulp.src([
-    "src/fonts/**/*.{ttf}",
+    "src/fonts/**/*"
     // "src/img/*.webp",
     // "src/js/picturefill.min.js"
   ], {

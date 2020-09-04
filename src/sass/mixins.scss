@@ -37,5 +37,5 @@
 }
 
 @mixin transition ($prop: all) {
-  transition: $prop .2s linear;
+  transition: $prop .1s linear;
 }
