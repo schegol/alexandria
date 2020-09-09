@@ -380,6 +380,27 @@ a {
   .link:hover, .link:focus {
     color: #ee93fd; }
 
+.btn {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.1s linear;
+  width: 100%;
+  max-width: 400px;
+  min-height: 46px;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  background-color: #ee93fd;
+  border-radius: 4px; }
+  .btn:hover, .btn:focus {
+    background-color: #e248fc; }
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -392,6 +413,53 @@ a {
     padding: 0; }
   .container--small {
     width: 1170px; } }
+
+.section__subheading {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 20px;
+  color: #909090;
+  text-align: center; }
+  .section__subheading--white {
+    color: #fff; }
+
+.section__heading {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 18px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #000; }
+  .section__heading--white {
+    color: #fff; }
+
+@media (min-width: 768px) {
+  .section__subheading {
+    font-size: 18px;
+    line-height: 21px; }
+    .section__subheading--white {
+      color: #909090; }
+  .section__heading {
+    font-size: 35px;
+    line-height: 42px; }
+    .section__heading--white {
+      color: #000; } }
+
+@media (min-width: 1500px) {
+  .section__subheading {
+    margin-bottom: 16px;
+    font-size: 19px;
+    line-height: 23px; }
+  .section__heading {
+    margin-bottom: 25px;
+    font-size: 40px;
+    line-height: 48px; } }
 
 .modal {
   position: fixed;
@@ -430,6 +498,201 @@ a {
   color: #fff;
   background-color: #ee93fd;
   border: none; }
+
+.qna {
+  padding: 42px 0 46px;
+  background-color: #fff; }
+
+.qna__question-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.qna__question-block {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.08); }
+  .qna__question-block:not(:last-child) {
+    margin-bottom: 14px; }
+
+.qna__question-toggle {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  padding: 11px 59px 15px 17px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000;
+  background-color: transparent;
+  border: none; }
+  .qna__question-toggle--open::after {
+    transform: translateY(-50%) rotate(45deg); }
+
+.qna__question-toggle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #b5b5b5;
+  transform: translateY(-50%); }
+
+.qna__question-toggle::after {
+  content: "";
+  position: absolute;
+  transition: transform 0.1s linear;
+  top: 50%;
+  right: 23px;
+  display: block;
+  width: 11px;
+  height: 11px;
+  background-image: url("../img/icon-plus-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(-50%) rotate(0); }
+
+.qna__question-block--open .qna__question-toggle::after {
+  transform: translateY(-50%) rotate(45deg); }
+
+.qna__question-answer {
+  margin: 0;
+  padding: 0;
+  display: none;
+  padding: 11px 15px 15px 15px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000; }
+
+@media (min-width: 768px) {
+  .qna {
+    padding: 80px 0 80px;
+    background-color: #f9f9f9; }
+  .qna .section__heading {
+    margin-bottom: 50px; }
+  .qna__question-block {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.04); }
+    .qna__question-block:not(:last-child) {
+      margin-bottom: 16px; }
+  .qna__question-toggle {
+    min-height: 60px; } }
+
+@media (min-width: 1500px) {
+  .qna {
+    padding: 89px 0 97px; }
+  .qna__question-toggle {
+    min-height: 66px;
+    padding: 23px 280px 25px 25px;
+    font-size: 18px;
+    line-height: 22px; }
+  .qna__question-toggle::before {
+    right: 21px;
+    width: 31px;
+    height: 31px;
+    background-color: #ee93fd; }
+  .qna__question-toggle::after {
+    right: 31px;
+    width: 11px;
+    height: 11px;
+    background-image: url("../img/icon-plus-desktop.svg"); }
+  .qna__question-answer {
+    padding: 25px;
+    font-size: 18px;
+    line-height: 22px; } }
+
+.about-us {
+  padding: 48px 0 50px;
+  background-color: #f6f6f6; }
+
+.about-us__content {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
+
+.about-us__text {
+  margin-bottom: 20px; }
+
+.about-us__text p {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  text-align: center; }
+
+.about-us__text p:not(:last-child) {
+  margin-bottom: 22px; }
+
+.about-us__text b {
+  font-weight: 500; }
+
+.about-us__btn {
+  height: 50px; }
+
+@media (min-width: 768px) {
+  .about-us {
+    padding: 80px 0 80px;
+    background-color: #fff;
+    background-image: url("../img/bg-about-woman.png");
+    background-position: right -110px bottom;
+    background-size: 680px auto;
+    background-repeat: no-repeat; }
+  .about-us__content {
+    align-items: flex-start;
+    margin-bottom: 30px;
+    max-width: 60%; }
+  .about-us__text {
+    margin-bottom: 30px; }
+  .about-us__text p {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(17, 17, 17, 0.4);
+    text-align: left; }
+    .about-us__text p:not(:last-child) {
+      margin-bottom: 0; }
+  .about-us__text b {
+    font-weight: 400; }
+  .about-us__btn {
+    margin: 0;
+    align-self: flex-start;
+    max-width: 243px; } }
+
+@media (min-width: 1500px) {
+  .about-us {
+    padding: 117px 0 116px;
+    background-position: calc(50% + 330px) bottom;
+    background-size: 910px 607px; }
+  .about-us__content {
+    max-width: 603px; }
+  .about-us__text {
+    margin-bottom: 35px; } }
+
+.map {
+  width: 100%;
+  height: 432px;
+  background-image: url("../img/bg-map-mobile.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+@media (min-width: 768px) {
+  .map {
+    height: 500px;
+    background-image: url("../img/bg-map-desktop.png"); } }
+
+@media (min-width: 1500px) {
+  .map {
+    height: 579px; } }
 
 .footer {
   background-color: #1d1d1d; }

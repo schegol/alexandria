@@ -1,0 +1,91 @@
+.about-us {
+  padding: 48px 0 50px;
+  background-color: #f6f6f6;
+}
+
+.about-us__content {
+  @include dflex(nowrap, column, flex-start, center);
+}
+
+.about-us__text {
+  margin-bottom: 20px;
+}
+
+.about-us__text p {
+  @include reset;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.about-us__text p:not(:last-child) {
+  margin-bottom: 22px;
+}
+
+.about-us__text b {
+  font-weight: 500;
+}
+
+.about-us__btn {
+  height: 50px;
+}
+
+@media (min-width: $tablet-width) {
+  .about-us {
+    padding: 80px 0 80px;
+    background-color: #fff;
+    background-image: url("../img/bg-about-woman.png");
+    background-position: right -110px bottom;
+    background-size: 680px auto;
+    background-repeat: no-repeat;
+  }
+
+  .about-us__content {
+    align-items: flex-start;
+    margin-bottom: 30px;
+    max-width: 60%;
+  }
+
+  .about-us__text {
+    margin-bottom: 30px;
+  }
+
+  .about-us__text p {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(17,17,17,.4);
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  .about-us__text b {
+    font-weight: 400;
+  }
+
+  .about-us__btn {
+    margin: 0;
+    align-self: flex-start;
+    max-width: 243px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .about-us {
+    padding: 117px 0 116px;
+    background-position: calc(50% + 330px) bottom;
+    background-size: 910px 607px;
+  }
+
+  .about-us__content {
+    max-width: 603px;
+  }
+
+  .about-us__text {
+    margin-bottom: 35px;
+  }
+}
