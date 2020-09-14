@@ -499,6 +499,106 @@ a {
   background-color: #ee93fd;
   border: none; }
 
+.calculator {
+  padding-top: 39px; }
+
+.calculator__heading {
+  margin-bottom: 25px; }
+
+.calculator__form {
+  padding: 37px 20px 45px;
+  background-color: #f7f7f7;
+  border-radius: 37px; }
+
+.calculator__form-heading {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 13px;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 25px;
+  color: #000;
+  text-align: center; }
+
+.calculator__form-line {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 59px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.09);
+  overflow: hidden; }
+  .calculator__form-line--results {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 21px;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none; }
+
+.calculator__form-label {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s linear;
+  flex-grow: 1;
+  flex-basis: 33.3333%;
+  min-height: 100%;
+  padding: 0 20px;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #000;
+  cursor: pointer; }
+  .calculator__form-label:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12); }
+  .calculator__form-label:hover, .calculator__form-label:focus {
+    background-color: #fadefe; }
+
+.calculator__form-input:checked + .calculator__form-label {
+  color: #fff;
+  background-color: #ee93fd; }
+
+.calculator__form-result {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 13px;
+  min-width: 213px;
+  min-height: 59px;
+  background-color: #fff;
+  border: 2px solid #ee93fd;
+  border-radius: 4px; }
+
+.calculator__form-value,
+.calculator__form-currency {
+  color: #ee93fd;
+  font-weight: 500;
+  font-size: 37px;
+  line-height: 38px;
+  text-align: center; }
+
+.calculator__form-disclaimer {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: center;
+  color: rgba(17, 17, 17, 0.54); }
+
+.calculator__btn {
+  min-height: 59px; }
+
 .qna {
   padding: 42px 0 46px;
   background-color: #fff; }
