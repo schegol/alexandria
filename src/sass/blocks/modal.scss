@@ -1,7 +1,5 @@
 .modal-active {
-  position: fixed;
   overflow: hidden;
-  background-color: rgba(11, 11, 11, 0.8);
 }
 
 
@@ -13,7 +11,7 @@
   left: 0;
   top: 0;
   z-index: 50;
-  background-color: rgba(11, 11, 11, 0.5);
+  background-color: rgba(11, 11, 11, 0.9);
   overflow: auto;
   opacity: 0;
   transition: opacity 0.5s, background-color 1s;
@@ -32,8 +30,6 @@
 .modal__form {
   width: calc(100% - 40px);
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   max-width: 527px;
   margin: 20px auto;
   background-color: #fff;
@@ -138,5 +134,11 @@
 @media (min-width: 992px) {
   .modal__close-btn {
     display: block;
+  }
+
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

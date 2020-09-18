@@ -33,11 +33,32 @@ $(document).ready(function() {
         render()
     });
 
+  //Слайдер баннера
+  $('.banner-slider').slick({
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    dots: true,
+    dotsClass: 'slick-dots',
+    nextArrow: '<button class="slick__arrows nextArrow "></button>',
+    prevArrow: '<button class="slick__arrows prevArrow "></button>',
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: false
+        }
+      },
+    ]
+  });
+
   //Слайдер интерьеров
   $('.interiors-slider').slick({
     infinite: true,
     speed: 300,
     slidesToShow: 1,
+    dots: true,
+    dotsClass: 'slick-dots',
     nextArrow: '<button class="slick__arrows nextArrow "></button>',
     prevArrow: '<button class="slick__arrows prevArrow "></button>',
   });
@@ -68,7 +89,31 @@ $(document).ready(function() {
     if (e.target === this) {
       $('body').removeClass('modal-active')
     }
-  })
-  //уонец модалки
 
+  })
+  //конец модалки
+
+
+
+  //меню раскрывающиеся
+  $('#hamburger').on('click', navStatus);
 });
+
+function navStatus() {
+  if (document.body.classList.contains('hamburger-active')) {
+    navClose();
+  }
+  else {
+    navOpen();
+  }
+}
+
+function navClose() {
+  document.body.classList.remove('hamburger-active');
+  $('.header__nav').slideUp()
+}
+
+function navOpen() {
+  document.body.classList.add('hamburger-active');
+  $('.header__nav').slideDown()
+}
