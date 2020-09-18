@@ -101,3 +101,23 @@
 .calculator__btn {
   min-height: 59px;
 }
+
+@media (min-width: 768px) {
+  .calculator__form {
+    max-width: 588px;
+    margin: 0 auto;
+  }
+
+  .calculator {
+    padding-bottom: 40px;
+    background: url("../img/bg-calculator-desktop.png") no-repeat right center;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .calculator {
+    padding-bottom: 98px;
+    padding-top: 98px;
+  }
+}
